@@ -19,7 +19,7 @@ var getHtmlConfig = function (name) {
 let config = {
     // 入口
     entry: {
-        'common': ['./src/page/common/index.js'],
+        'common': ['./src/page/common/index.js', 'webpack-dev-server/client?http://local'],
         'index': ['./src/page/index/index.js'],
         'login': ['./src/page/login/index.js']
     },
@@ -37,6 +37,14 @@ let config = {
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+            },
+            {
+                test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
+                loader: 'url-loader?limit=100&name=resource/[name].[ext]'
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-loader'
             }
         ]
     },
