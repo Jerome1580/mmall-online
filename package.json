@@ -1,0 +1,27 @@
+{
+  "name": "mmall-online",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jerome1580/mmall-online.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jerome1580/mmall-online/issues"
+  },
+  "homepage": "https://github.com/Jerome1580/mmall-online#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.9",
+    "html-loader": "^0.4.5",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.28.0",
+    "style-loader": "^0.19.1",
+    "webpack": "^1.15.0"
+  }
+}
