@@ -51,6 +51,10 @@ var config = {
             }
         ]
     },
+    // 其他整合
+    resolve: {
+        alias: {}
+    },
     plugins: [
         // 独立通用模块到js/base.js，以便浏览器缓存，独立的模块
         new webpack.optimize.CommonsChunkPlugin({
