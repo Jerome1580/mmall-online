@@ -5,17 +5,15 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 // 环境变量的配置，dev/online
 var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 // 获取html-webpack-plugin 参数的方法
-var getHtmlConfig = function (name) {
+var getHtmlConfig = function (name, title) {
     return {
-        // html 原始模板
         template: './src/view/' + name + '.html',
-        // 基于output中path作为相对路径
         filename: 'view/' + name + '.html',
+        title: title,
         inject: true,
         hash: true,
         chunks: ['common', name]
-        // 包括common模块，和自身的name（参数）模块
-    }
+    };
 };
 
 // webpack config
@@ -24,7 +22,7 @@ var config = {
     entry: {
         'common': ['./src/page/common/index.js'],
         'index': ['./src/page/index/index.js'],
-        'login': ['./src/page/login/index.js']
+        'user-login': ['./src/page/user-login/index.js']
     },
     // 打包
     output: {
@@ -71,8 +69,8 @@ var config = {
         // 把css单独打包到文件里,方便缓存到cdn中
         new ExtractTextPlugin("css/[name].css"),
         // html模板的处理
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login'))
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录'))
     ]
 };
 
