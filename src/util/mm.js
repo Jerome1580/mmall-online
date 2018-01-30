@@ -2,7 +2,7 @@
 
 var Hogan = require('hogan');
 var config = {
-    serverHost: ''
+    serverHost: 'http://www.happymmall.com'
 };
 
 var _mm = {
