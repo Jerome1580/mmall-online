@@ -26,7 +26,6 @@ var navSide = {
                 this.option.navList[i].isActive = true;
             }
         }
-        ;
         // 渲染list数据
         var navHtml = _mm.renderHtml(templateIndex, {
             navList: this.option.navList
