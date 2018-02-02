@@ -35,7 +35,7 @@ var config = {
         // 存放时文件的路径
         path: './dist',
         // 访问文件时的路径
-        publicPath: '/dist',  // 访问根路径下的文件。根就是http://localhost:8088/
+        publicPath: '/dist/',  // 访问根路径下的文件。根就是http://localhost:8088/
         filename: 'js/[name].js'
     },
     // 引入外部的变量或模块
@@ -51,8 +51,8 @@ var config = {
             },
             {
                 test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
-                loader: 'url-loader?limit=100&name=resource/[name].[ext]'
-                // limit 小于100kb的都会打包成base64，放在resource下源文件名
+                loader: 'url-loader?limit=100&name=resource/[hash:8].[name].[ext]'
+                // limit 小于100kb的都会打包成base64，超过限制的放在resource下源文件名
             },
             {
                 test: /\.string$/,
