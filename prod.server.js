@@ -2,6 +2,8 @@ var express = require('express');
 var axios = require('axios');
 
 let port = process.env.PORT || 8088;
+let serverConfig = require('./package.json');
+let proxyConfig = serverConfig.server.biz;
 
 const app = express();
 const apiRouter = express.Router();
@@ -20,6 +22,10 @@ app.use('/user', function (req, res) {
     res.end()
 
 });
+
+app.use('/api',(req,res)=>{
+    console.log(proxyConfig)
+})
 
 app.use(express.static('./dist'));
 

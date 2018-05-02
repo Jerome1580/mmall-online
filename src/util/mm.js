@@ -1,6 +1,6 @@
 'use strict';
 
-var Hogan = require('hogan');
+// var Hogan = require('hogan');
 var config = {
     serverHost: 'http://www.happymmall.com'
 };
@@ -45,9 +45,9 @@ var _mm = {
     },
     // 渲染html模板
     renderHtml: function (htmlTemplate, data) {
-        var template = Hogan.compile(htmlTemplate),
-            result = template.render(data)
-        return result
+        // var template = Hogan.compile(htmlTemplate),
+        //     result = template.render(data)
+        // return result
     },
     // 成功提示
     successTips: function (msg) {
