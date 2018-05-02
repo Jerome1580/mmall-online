@@ -1,4 +1,15 @@
 'use strict';
+let hbs = require('./test.hbs');
+require('util/handlebars-helper');
+require('util/handlebars-partial')
+let data = [
+    {id:1,name:'张三'},
+    {id:1,name:'张三'},
+    {id:1,name:'张三'},
+    {id:1,name:'张三'},
+    {id:1,name:'张三'},
+]
+console.log(hbs(data))
 
 require('./index.css');
 require('page/common/nav/index.js');

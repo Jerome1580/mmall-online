@@ -60,6 +60,10 @@ var config = {
             {
                 test: /\.string$/,
                 loader: 'html-loader'
+            },
+            {
+                test: /\.hbs$/,
+                loader: 'handlebars-loader'
             }
         ]
     },
